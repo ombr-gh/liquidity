@@ -148,7 +148,8 @@ void main() {
     vec2 v = p * (1.0 - l.x) / u_scale;
     v += vec2(sin(edge * 10.0), cos(edge * 8.0)) * edgeInfluence;
 
-    float noiseIntensity = insideLogo ? u_noiseIntensity : 0.1;
+    // Use the global noise intensity for both inside and outside the logo
+    float noiseIntensity = u_noiseIntensity;
     float flowNoise = snoise(vec3(p * 2.0, time * 0.15)) * noiseIntensity;
     v += vec2(flowNoise, flowNoise * 0.7);
 
@@ -180,7 +181,10 @@ void main() {
     o = (exp2x - 1.0) / (exp2x + 1.0);
 
     vec2 noiseCoord = FC / 1.5;
-    float noise = random(noiseCoord + time * 0.0004) * 0.12 - 0.075;
+    // scale the procedural random noise by the same noise intensity so
+    // setting `u_noiseIntensity` to 0 eliminates remaining background noise
+    float baseNoise = random(noiseCoord + time * 0.0004) * 0.12 - 0.075;
+    float noise = baseNoise * u_noiseIntensity;
     o = o + vec4(noise);
 
     o = liquidMetalEffect(o, edge, time);
