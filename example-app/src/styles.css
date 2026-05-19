@@ -1,0 +1,19 @@
+body {
+  font-family:
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial;
+  margin: 32px;
+  background-color: black;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  color: white;
+}
