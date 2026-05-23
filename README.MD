@@ -1,4 +1,6 @@
-# liquidity-react
+# Liquidity
+
+[![CodeQL Advanced](https://github.com/ombr-gh/liquidity/actions/workflows/codeql.yml/badge.svg)](https://github.com/ombr-gh/liquidity/actions/workflows/codeql.yml)
 
 A small React + TypeScript library for rendering a liquid chrome logo effect from a transparent SVG source.
 
