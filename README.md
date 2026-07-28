@@ -36,3 +36,7 @@ export function HeroLogo() {
 
 - The component expects the SVG itself to contain the final transparent shape.
 - SVG input is rasterized to a centered texture before being fed into the shader.
+
+## Trademark Notice
+
+The name, logos, and composite marks associated with this project are trademarks of our company. While the underlying source code is freely available under the Apache 2.0 license, this license **does not** grant you any rights to use our brand identity, logos, or name for your own distributions or commercial spin-offs.
